@@ -1,0 +1,67 @@
+/* Custom Styles */
+.hero {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 150px 0;
+    text-align: center;
+  }
+  
+  .features {
+    background-color: #f8f9fa;
+    padding: 100px 0;
+  }
+  
+  .feature-item {
+    margin-bottom: 30px;
+  }
+  
+  .feature-item i {
+    font-size: 3rem;
+    color: #007bff;
+  }
+  
+  .feature-item h3 {
+    margin-top: 20px;
+  }
+  
+  .pricing {
+    background-color: #343a40;
+    color: #fff;
+    padding: 100px 0;
+  }
+  
+  .card {
+    background-color: #454d55;
+    border: none;
+  }
+  
+  .card-title {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .card-price {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .period {
+    font-size: 1rem;
+  }
+  
+  .contact {
+    padding: 100px 0;
+  }
+  
+  .footer {
+    background-color: #343a40;
+    color: #fff;
+  }
+  
+  .footer span {
+    font-size: 0.9rem;
+  }
+  
