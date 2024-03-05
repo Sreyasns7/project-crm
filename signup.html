@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="signup.css">
+      <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/274ee977b7.js" crossorigin="anonymous"></script>
+
+    <title>Login page</title>
+    <style>
+         /* Custom CSS for Navbar */
+ /* .navbar {
+  background-color: #007bff; 
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 0;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff; 
+  font-weight: bold;
+  transition: 0.3s; 
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f8f9fa; 
+
+.navbar-toggler {
+  border-color: #ffffff; 
+}
+
+.navbar-toggler-icon {
+  background-color: #ffffff;
+} */
+    </style>
+</head>
+<body>
+
+     <!-- Navbar -->
+ <!-- <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">CRM Project</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="./crm.html"><i class="fa-solid fa-house"></i> HOME</a>
+              </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./signup.html">signup</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav> -->
+  
+
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand">CRM</a>
+      <form class="d-flex">
+        <button class="btn btn-outline-success" type="submit"><a class="nav-link" href="./crm.html"><i class="fa-solid fa-house"></i> HOME</a></button>
+        <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+        <button class="btn btn-outline-success" type="submit"><a class="nav-link" href="./signup.html">signup</a></button>
+      </form>
+    </div>
+  </nav>
+
+
+    <!----------------------- Main Container -------------------------->
+
+     <div class="container d-flex justify-content-center align-items-center min-vh-100">
+
+    <!----------------------- Login Container -------------------------->
+
+       <div class="row border rounded-5 p-3 bg-white shadow box-area">
+
+    <!--------------------------- Left Box ----------------------------->
+
+       <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background: #103cbe;">
+           <div class="featured-image mb-3">
+            <img src="img2.jpg" class="img-fluid" style="width: 250px;">
+           </div>
+           <p class="text-white fs-2" style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">CRM</p>
+           <small class="text-white text-wrap text-center" style="width: 17rem;font-family: 'Courier New', Courier, monospace;">Empower your business with our CRM solution.</small>
+       </div> 
+
+    <!-------------------- ------ Right Box ---------------------------->
+        
+       <div class="col-md-6 right-box">
+          <div class="row align-items-center">
+                <div class="header-text mb-4">
+                     <h2>LOGIN PAGE</h2>
+                     <p>We are happy to have you back.</p>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Email address">
+                </div>
+                <div class="input-group mb-1">
+                    <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password">
+                </div>
+                <div class="input-group mb-5 d-flex justify-content-between">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="formCheck">
+                        <label for="formCheck" class="form-check-label text-secondary"><small>Remember Me</small></label>
+                    </div>
+                    <div class="forgot">
+                        <small><a href="#">Forgot Password?</a></small>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <button class="btn btn-lg btn-primary w-100 fs-6">Login</button>
+                </div>
+                
+                <div class="row">
+                    <small>Don't have account? <a href="#">Sign Up</a></small>
+                </div>
+          </div>
+       </div> 
+
+      </div>
+    </div>
+
+</body>
+</html>
