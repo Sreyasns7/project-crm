@@ -41,6 +41,10 @@
     padding: 20px;
     margin: 50px;
 }
+.removebutton{
+  margin-left: 50%;
+  padding: 10px;
+}
   </style>
 </head>
 <body>
@@ -68,24 +72,35 @@
     <div class="card-column" id="archivedCards">
       <!-- Archived cards will be dynamically loaded here -->
     </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script>
+</div>
+
+<button class="removebutton" id="removeButton">Remove</button>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
     $(document).ready(function() {
-      // Load archived cards from local storage
-      var archivedCards = JSON.parse(localStorage.getItem("archivedCards"));
-      if (archivedCards) {
-        // Append each archived card to the #archivedCards div
-        $("#archivedCards").html(archivedCards.join(""));
-        // Add click event handler to close buttons
-        $(".close-btn").click(function() {
-          var cardHtml = $(this).parent().html();
-          $(this).parent().remove(); // Remove the card from the archived cards list
-          localStorage.setItem("archivedCards", JSON.stringify($("#archivedCards").html())); // Update local storage
-          window.history.back(); // Go back to the earlier page
+        // Load archived cards from local storage
+        var archivedCards = JSON.parse(localStorage.getItem("archivedCards"));
+        if (archivedCards) {
+            // Append each archived card to the #archivedCards div
+            $("#archivedCards").html(archivedCards.join(""));
+            // Add click event handler to close buttons
+            $(".close-btn").click(function() {
+                var cardHtml = $(this).parent().html();
+                $(this).parent().remove(); // Remove the card from the archived cards list
+                localStorage.setItem("archivedCards", JSON.stringify($("#archivedCards").html())); // Update local storage
+                window.history.back(); // Go back to the earlier page
+            });
+        }
+        
+        // Add click event handler to the remove button
+        $("#removeButton").click(function() {
+            // Code to remove all archived cards
+            $("#archivedCards").empty(); // Empty the archived cards container
+            localStorage.removeItem("archivedCards"); // Remove the archived cards from local storage
         });
-      }
     });
-  </script>
+</script>
+
 </body>
 </html>

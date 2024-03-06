@@ -97,6 +97,9 @@
   padding: 30px;
 }
 
+#archiveButton {
+  display: none; /* Initially hide the archiveButton */
+}
 
     
   </style>
@@ -106,7 +109,7 @@
 <body>
 
  <!-- Navbar -->
- <nav class="navbar navbar-expand-lg navbar-light">
+ <nav class="navbar navbar-expand-lg navbar-light fixed-top">
   <div class="container">
     <a class="navbar-brand" href="#">CRM</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -116,13 +119,16 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#features">Features</a>
+          <a class="nav-link" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#pricing">Pricing</a>
+          <a class="nav-link" href="./dashboard.html">Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
+          <a class="nav-link" href="./pricing.html">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./contact.html">Contact</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./signup.html">signup</a>
@@ -144,26 +150,26 @@
   <!-- Features Section -->
   <section id="features" class="features">
     <div class="container">
-      <h2 class="text-center">Key Features</h2>
+      <h2 class="fec">Key Features</h2>
       <div class="row">
         <div class="col-lg-4">
           <div class="feature-item">
             <i class="bi bi-person-check-fill"></i>
-            <h3>Customer Management</h3>
+            <h2>Customer Management</h2>
             <p>Efficiently manage your customer data and interactions.</p>
           </div>
         </div>
         <div class="col-lg-4">
           <div class="feature-item">
             <i class="bi bi-graph-up"></i>
-            <h3>Analytics & Reporting</h3>
+            <h2>Analytics & Reporting</h2>
             <p>Track performance and gain insights with detailed analytics.</p>
           </div>
         </div>
         <div class="col-lg-4">
           <div class="feature-item">
             <i class="bi bi-credit-card-2-front-fill"></i>
-            <h3>Payments Integration</h3>
+            <h2>Payments Integration</h2>
             <p>Seamlessly integrate payment processing into your CRM.</p>
           </div>
         </div>
@@ -171,10 +177,43 @@
     </div>
   </section>
 
+  <section>
+    <div class="conteiner1">
+      <img src="./Core Concepts of CRM Workflow.svg" alt="">
+    </div>
+  </section>
+
+
+<section>
+  <div>
+    <h1 class="container3">Never miss out on a follow-up</h1>
+    <p class="para3"> <span class="span"> Schedule calls, meetings, mailings, or quotations, </span> and Odoo automatically plans the next
+      <br> activity based on your sales script</p>
+  </div>
+  <div class="conteiner0">
+    <img src="./data-collection.jpg" alt="">
+  </div>
+</section>
+
+
+  <section>
+    <div class="container2">
+      <h2> <i class="fa-regular fa-message"></i>Effortless communication means no  miscommunication</h2>
+    </div>
+    <div class="para">
+      <span class="span">Communication is key. </span>Incoming emails are automatically added to your pipeline,
+      <br> and all contact with your team and customers is made from a single place,
+      <br> ensuring easy access to information at all times
+    </div>
+    <div class="conteiner3">
+      <img src="./crmwhatsapp.png" alt="">
+    </div>
+  </section>
+
   <!-- Pricing Section -->
   <section id="pricing" class="pricing">
     <div class="container">
-      <h2 class="text-center">Pricing Plans</h2>
+      <h2 class="heading">Pricing Plans</h2>
       <div class="row">
         <div class="col-lg-4">
           <div class="card">
@@ -222,10 +261,16 @@
     </div>
   </section>
 
+  <section>
+    <div class="dashimg">
+      <img src="/dashboard.png" alt="">
+    </div>
+  </section>
+
   <!-- Contact Section -->
   <section id="contact" class="contact">
     <div class="container">
-      <h2 class="text-center">Contact Us</h2>
+      <h2 class="head-contact">Contact Us</h2>
       <div class="row">
         <div class="col-md-6 offset-md-3">
           <form>
@@ -241,92 +286,14 @@
               <label for="message" class="form-label">Message</label>
               <textarea class="form-control" id="message" rows="3" placeholder="Enter your message"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-success">Submit</button>
           </form>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="dashboard" class="dashboard">
-    <div class="container" style="background-color: #f0f0f0;">
-      <h1 class="mt-4">Activity Overview</h1>
-      <button class="archive-btn" id="archiveButton">Archive (<span id="archivedCount">0</span>)</button>
 
-      <div class="row" >
-        <div class="col-md-4" >
-          <div class="card" id="card1" style="background-color: aliceblue;">
-            <div class="card-body" >
-              <h4 class="card-price" style="color: blue;">463<span class="period"></span></h4>
-              <p class="card-text">Created Leads</p>
-              <ul class="list-unstyled">
-                <li class="farrow-down">-33% <i class="fa-solid fa-arrow-down"></i></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card" id="card2" style="background-color: aliceblue;">
-            <div class="card-body">
-              <h4 class="card-price" style="color: blue;">1,199<span class="period"></span></h4>
-              <p class="card-text">Contacted Leads</p>
-              <ul class="list-unstyled">
-                <li class="farrow-up">2% <i class="fa-solid fa-arrow-up"></i></li>
-              </ul>
-            </div> 
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card" id="card2" style="background-color: aliceblue;">
-            <div class="card-body">
-              <h4 class="card-price" style="color: blue;">139<span class="period"></span></h4>
-              <p class="card-text">Outbound Calls</p>
-              <ul class="list-unstyled">
-                <li class="farrow-up">19% <i class="fa-solid fa-arrow-up"></i></li>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card" id="card2" style="background-color: aliceblue;">
-            <div class="card-body">
-              <h4 class="card-price" style="color: blue;">23<span class="period"></span></h4>
-              <p class="card-text">ibound Calls</p>
-              <ul class="list-unstyled">
-                <li class="farrow-up">35% <i class="fa-solid fa-arrow-up"></i></li>
-            </div>
-          </div>
-        </div><div class="col-md-4">
-          <div class="card" id="card2" style="background-color: aliceblue;">
-            <div class="card-body">
-              <h4 class="card-price" style="color: blue;">8m 54s<span class="period"></span></h4>
-              <p class="card-text">All Calls</p>
-              <ul class="list-unstyled">
-                <li class="farrow-up">69% <i class="fa-solid fa-arrow-up"></i></li>
-            </div>
-          </div>
-        </div><div class="col-md-4">
-          <div class="card" id="card2" style="background-color: aliceblue;">
-            <div class="card-body">
-              <h4 class="card-price" style="color: blue;">9m 43s<span class="period"></span></h4>
-              <p class="card-text">Outbound Calls</p>
-              <ul class="list-unstyled">
-                <li class="farrow-up">68% <i class="fa-solid fa-arrow-up"></i></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    
-    <div class="archived" id="archivedCards">
-      <h2>Archived Cards</h2>
-    </div>
-    
-    <div class="popup" id="swipePopup">
-      <h3>Card Archived!</h3>
-    </div>
-  </section>
 
 
   <!-- Footer -->
@@ -410,21 +377,38 @@
       revert: true,
       start: function(event, ui) {
         $(this).data("startPosition", ui.position.left);
+        $("#archiveButton").show();
       },
       drag: function(event, ui) {
         if (ui.position.left > 100) {
           $(this).draggable("disable");
           $(this).appendTo("#archiveButton");
         }
-      }
+      },
     });
 
+    // Function to save archived cards to local storage
     function saveArchivedCards() {
       var archivedCards = [];
       $(".archived-card").each(function() {
         archivedCards.push($(this).html());
       });
       localStorage.setItem("archivedCards", JSON.stringify(archivedCards));
+    }
+
+    // Load archived cards from local storage and handle Disarchive button click
+    var archivedCards = JSON.parse(localStorage.getItem("archivedCards"));
+    if (archivedCards) {
+      $("#archivedCards").html(archivedCards);
+
+      // Disarchive button click handler
+      $(document).on('click', '.disarchive-btn', function() {
+        var cardHtml = $(this).parent().html();
+        $(this).parent().remove(); // Remove the card from the archived cards list
+        $("#dashboard").append(cardHtml); // Append the card back to the dashboard
+        $(".card").draggable("enable"); // Re-enable dragging for the card
+        saveArchivedCards(); // Update local storage
+      });
     }
   });
 </script>
