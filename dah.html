@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM Dashboard</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+          <!-- Bootstrap CSS -->
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+          <!-- Custom CSS -->
+          <link rel="stylesheet" href="styles.css">
+      
+          <script src="https://kit.fontawesome.com/274ee977b7.js" crossorigin="anonymous"></script>
+  
+  <style>
+    /* Add custom styles here */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container1 {
+      margin-top: 130px;
+    }
+    .card {
+      margin-bottom: 20px;
+    }
+    .chart-container {
+      position: relative;
+      width: 80%;
+      margin: auto;
+    }
+    #archiveButton {
+  display: none; /* Initially hide the archiveButton */
+}
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <div class="container">
+      <a class="navbar-brand" href="#">CRM</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                  <a class="nav-link" style="color: #f19696;" href="./crm.html">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" style="color: #f19696;" href="#">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" style="color: #f19696;" href="./contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" style="color: #f19696;" href="./pricing.html">Pricing</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" style="color: #f19696;" href="./signup.html">Signup</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>
+
+<!-- Bootstrap JS (Make sure this is included in your project) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+
+
+<section>
+  <div class="container1">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Total Customers</h5>
+            <p class="card-text">500</p>
+            <a href="#" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Total Sales</h5>
+            <p class="card-text">$50,000</p>
+            <a href="#" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Average Order Value</h5>
+            <p class="card-text">$100</p>
+            <a href="#" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Recent Orders</h5>
+            <ul class="list-group">
+              <li class="list-group-item">Order #123 - $200</li>
+              <li class="list-group-item">Order #124 - $150</li>
+              <li class="list-group-item">Order #125 - $300</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Top Customers</h5>
+            <ul class="list-group">
+              <li class="list-group-item">Customer A - $5000</li>
+              <li class="list-group-item">Customer B - $4000</li>
+              <li class="list-group-item">Customer C - $3000</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Sales Overview</h5>
+            <div class="chart-container">
+              <canvas id="salesChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="dashboard" class="dashboard">
+  <div class="container" style="background-color: #f0f0f0;">
+    <h1 class="mt-4" style="text-align: center;">Activity Overview</h1>
+    <button class="archive-btn" id="archiveButton" style="margin-left:42%; margin-bottom: 20px;">Archive (<span id="archivedCount">0</span>)</button>
+
+    <div class="row" >
+      <div class="col-md-4" >
+        <div class="card" id="card1" style="background-color: aliceblue;">
+          <div class="card-body" >
+            <h4 class="card-price" style="color: blue;">463<span class="period"></span></h4>
+            <p class="card-text">Created Leads</p>
+            <ul class="list-unstyled">
+              <li class="farrow-down">-33% <i class="fa-solid fa-arrow-down"></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card" id="card2" style="background-color: aliceblue;">
+          <div class="card-body">
+            <h4 class="card-price" style="color: blue;">1,199<span class="period"></span></h4>
+            <p class="card-text">Contacted Leads</p>
+            <ul class="list-unstyled">
+              <li class="farrow-up">2% <i class="fa-solid fa-arrow-up"></i></li>
+            </ul>
+          </div> 
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card" id="card2" style="background-color: aliceblue;">
+          <div class="card-body">
+            <h4 class="card-price" style="color: blue;">139<span class="period"></span></h4>
+            <p class="card-text">Outbound Calls</p>
+            <ul class="list-unstyled">
+              <li class="farrow-up">19% <i class="fa-solid fa-arrow-up"></i></li>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card" id="card2" style="background-color: aliceblue;">
+          <div class="card-body">
+            <h4 class="card-price" style="color: blue;">23<span class="period"></span></h4>
+            <p class="card-text">ibound Calls</p>
+            <ul class="list-unstyled">
+              <li class="farrow-up">35% <i class="fa-solid fa-arrow-up"></i></li>
+          </div>
+        </div>
+      </div><div class="col-md-4">
+        <div class="card" id="card2" style="background-color: aliceblue;">
+          <div class="card-body">
+            <h4 class="card-price" style="color: blue;">8m 54s<span class="period"></span></h4>
+            <p class="card-text">All Calls</p>
+            <ul class="list-unstyled">
+              <li class="farrow-up">69% <i class="fa-solid fa-arrow-up"></i></li>
+          </div>
+        </div>
+      </div><div class="col-md-4">
+        <div class="card" id="card2" style="background-color: aliceblue;">
+          <div class="card-body">
+            <h4 class="card-price" style="color: blue;">9m 43s<span class="period"></span></h4>
+            <p class="card-text">Outbound Calls</p>
+            <ul class="list-unstyled">
+              <li class="farrow-up">68% <i class="fa-solid fa-arrow-up"></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="archived" id="archivedCards">
+    <h2>Archived Cards</h2>
+  </div>
+  
+  <div class="popup" id="swipePopup">
+    <h3>Card Archived!</h3>
+  </div>
+</section>  
+
+
+<section id="footer">
+    <div class="main-footer">
+      <div class="logoinfo" data-aos="fade-up">
+        <h2>CRM</h2>
+
+        <div class="contact-details">
+          <h1>Contact Us</h1>
+          <li>
+            <div class="fa fa-phone"></div><a href="tel:+91">+91 77xxxxxxxxx</a>
+          </li>
+          <li>
+            <div class="fa fa-envelope"></div><a href="mailto:yourmail@gmail.com">yourmail@gmail.com</a>
+          </li>
+          </li>
+        </div>
+      </div>
+      <div class="com " data-aos="fade-up">
+        <h1>About</h1>
+        <ul>
+          <li><a href="./crm.html">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="info" data-aos="fade-up">
+        <h1>Social Media</h1>
+        <div class="sociallogos">
+          <div class="logobox">
+            <i></i>
+            <a href="#" class="fa-brands fa-facebook"></a>
+            <a href="#" class="fa-brands fa-linkedin"></a>
+            <a href="#" class="fa-brands fa-youtube"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>© CRM</footer>
+  </section>
+
+  <!-- Bootstrap JS and Chart.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+  
+  <script>
+// Sample data for chart
+var salesData = {
+      labels: ["January", "February", "March", "April", "May", "June"],
+      datasets: [{
+        label: "Sales",
+        backgroundColor: "rgba(54, 162, 235, 0.2)",
+        borderColor: "rgba(54, 162, 235, 1)",
+        borderWidth: 1,
+        data: [10000, 15000, 20000, 18000, 25000, 30000],
+      }]
+    };
+
+    // Chart initialization
+    var ctx = document.getElementById('salesChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      data: salesData,
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
+    });
+
+    $(document).ready(function() {
+      $("#archiveButton").click(function() {
+        window.open("./archived.html", "_blank");
+      });
+  
+      $("#archiveButton").droppable({
+        accept: ".card",
+        drop: function(event, ui) {
+          var cardHtml = ui.draggable.html();
+          ui.draggable.remove(); // Remove the dragged card from the section
+          $("<div class='archived-card'>" + cardHtml + "</div>").appendTo("#archivedCards");
+          $("#swipePopup").show().delay(1000).fadeOut();
+          var archivedCount = $(".archived-card").length;
+          $("#archivedCount").text(archivedCount);
+          saveArchivedCards();
+        }
+      });
+  
+      $(".archived").sortable();
+  
+      $(".card").draggable({
+        revert: true,
+        start: function(event, ui) {
+          $(this).data("startPosition", ui.position.left);
+          $("#archiveButton").show();
+        },
+        drag: function(event, ui) {
+          if (ui.position.left > 100) {
+            $(this).draggable("disable");
+            $(this).appendTo("#archiveButton");
+          }
+        },
+      });
+  
+      // Function to save archived cards to local storage
+      function saveArchivedCards() {
+        var archivedCards = [];
+        $(".archived-card").each(function() {
+          archivedCards.push($(this).html());
+        });
+        localStorage.setItem("archivedCards", JSON.stringify(archivedCards));
+      }
+  
+      // Load archived cards from local storage and handle Disarchive button click
+      var archivedCards = JSON.parse(localStorage.getItem("archivedCards"));
+      if (archivedCards) {
+        $("#archivedCards").html(archivedCards);
+  
+        // Disarchive button click handler
+        $(document).on('click', '.disarchive-btn', function() {
+          var cardHtml = $(this).parent().html();
+          $(this).parent().remove(); // Remove the card from the archived cards list
+          $("#dashboard").append(cardHtml); // Append the card back to the dashboard
+          $(".card").draggable("enable"); // Re-enable dragging for the card
+          saveArchivedCards(); // Update local storage
+        });
+      }
+    });
+  </script>
+  
+  
+
+</body>
+</html>

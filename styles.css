@@ -22,17 +22,19 @@
   
 }
 
+
 .navbar-nav .nav-link:hover {
-  color: #ee6666; /* Light gray text on hover */
+  color: #ee6666; 
 }
 
 .navbar-toggler {
-  border-color: #ffffff; /* White border */
+  border-color: #ffffff; 
 }
 
 .navbar-toggler-icon {
   background-color: #ffffff; /* White icon */
 }
+
 
 /* Custom Styles */
 .hero {
