@@ -32,13 +32,12 @@
 }
 
 .navbar-toggler-icon {
-  background-color: #ffffff; /* White icon */
+  background-color: #ffffff; 
 }
 
 
-/* Custom Styles */
 .hero {
-    background-image: url('/CRM.webp');
+    background-image: url('./images/CRM.webp');
     background-size: cover;
     background-position: center;
     color: #fff;
