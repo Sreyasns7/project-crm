@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Dashboard</title>
+
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #666;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    color: #333;
+}
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.summary {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.summary-box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.summary-box h2 {
+    font-size: 18px;
+    color: #333;
+}
+
+.summary-box p {
+    font-size: 24px;
+    color: #007bff;
+    margin-top: 10px;
+}
+
+.activity, .tasks, .leads {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.activity h2, .tasks h2, .leads h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.activity ul, .tasks ul, .leads ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.activity li, .tasks li, .leads li {
+    margin-bottom: 10px;
+}
+
+.activity-type, .task-date, .lead-name {
+    font-weight: bold;
+    color: #333;
+}
+
+.lead-status {
+    color: #28a745; /* Green color for qualified leads */
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #666;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+    </style>
+    
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>CRM Dashboard</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#">Leads</a></li>
+                    <li><a href="#">Tasks</a></li>
+                    <li><a href="#">Reports</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="main-content">
+            <div class="summary">
+                <div class="summary-box">
+                    <h2>Total Contacts</h2>
+                    <p>500</p>
+                </div>
+                <div class="summary-box">
+                    <h2>Total Leads</h2>
+                    <p>200</p>
+                </div>
+                <div class="summary-box">
+                    <h2>Total Tasks</h2>
+                    <p>100</p>
+                </div>
+            </div>
+
+            <div class="charts">
+                <!-- Add charts here -->
+            </div>
+        </section>
+
+        <section class="activity">
+            <h2>Recent Activity</h2>
+            <ul>
+                <li>
+                    <span class="activity-type">Contact Added</span>
+                    <span class="activity-info">John Doe added as a new contact</span>
+                </li>
+                <li>
+                    <span class="activity-type">Lead Updated</span>
+                    <span class="activity-info">New lead status: Qualified</span>
+                </li>
+                <!-- More activity items -->
+            </ul>
+        </section>
+
+        <section class="tasks">
+            <h2>Upcoming Tasks</h2>
+            <ul>
+                <li>
+                    <span class="task-date">12th March 2024</span>
+                    <span class="task-info">Follow up with client A</span>
+                </li>
+                <li>
+                    <span class="task-date">15th March 2024</span>
+                    <span class="task-info">Prepare presentation for meeting</span>
+                </li>
+                <!-- More tasks -->
+            </ul>
+        </section>
+
+        <section class="leads">
+            <h2>Recent Leads</h2>
+            <ul>
+                <li>
+                    <span class="lead-name">Jane Smith</span>
+                    <span class="lead-status">New</span>
+                </li>
+                <li>
+                    <span class="lead-name">Mike Johnson</span>
+                    <span class="lead-status">Qualified</span>
+                </li>
+                <!-- More leads -->
+            </ul>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 CRM Solutions. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,6 +1,6 @@
  /* Custom CSS for Navbar */
  .navbar {
-  background-color: #e4e7e9; /* Blue background */
+  background-color:darkblue ; 
   padding-top: 1rem;
   padding-bottom: 1rem;
   border-radius: 0;
@@ -8,14 +8,14 @@
 }
 
 .navbar-brand {
-  color: #716f6f; 
+  color: #d7d3d3; 
   font-weight: bold;
   font-size: 37px;
   font-family:cursive;
 }
 
 .navbar-nav .nav-link {
-  color: #f19696; 
+  color: white; 
   font-weight: bold;
   transition: 0.3s; 
   margin-right: 100px;
@@ -24,7 +24,7 @@
 
 
 .navbar-nav .nav-link:hover {
-  color: #ee6666; 
+  color:#8eb4dd; 
 }
 
 .navbar-toggler {
@@ -200,7 +200,7 @@
 
 
   .pricing {
-    background-color: #b0d2db7f;
+    /* background-color: #b0d2db7f; */
     color: #0a0a0a;
     padding: 100px 0;
     margin-top: 150px;
@@ -229,7 +229,7 @@
   }
 
   .btn-primary{
-    background-color: #f19696;
+    background-color: darkblue;
     border-color: #0a0909;
   }
   

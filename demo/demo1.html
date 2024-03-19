@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM Dashboard</title>
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.main-content {
+  padding: 20px;
+}
+
+.overview {
+  margin-bottom: 40px;
+}
+
+.overview h2 {
+  margin-bottom: 10px;
+}
+
+.overview-cards {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.recent-activity {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CRM Dashboard</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Contacts</a></li>
+        <li><a href="#">Leads</a></li>
+        <li><a href="#">Tasks</a></li>
+        <li><a href="#">Reports</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="main-content">
+    <div class="overview">
+      <h2>Overview</h2>
+      <div class="overview-cards">
+        <div class="card">
+          <h3>Total Contacts</h3>
+          <p>500</p>
+        </div>
+        <div class="card">
+          <h3>Total Leads</h3>
+          <p>200</p>
+        </div>
+        <div class="card">
+          <h3>Total Tasks</h3>
+          <p>50</p>
+        </div>
+      </div>
+    </div>
+    <div class="recent-activity">
+      <h2>Recent Activity</h2>
+      <ul>
+        <li>New contact added: John Doe</li>
+        <li>New lead generated: Acme Inc.</li>
+        <li>Task completed: Follow up with XYZ Corp.</li>
+      </ul>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2024 CRM Solutions. All rights reserved.</p>
+  </footer>
+</body>
+</html>

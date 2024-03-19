@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Employee Salary Status</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    text-align: center;
+}
+
+#salaryChart {
+    height: 400px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Employee Salary Status</h1>
+        <div id="salaryChart"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/frappe-charts@1/dist/frappe-charts.min.iife.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    // Dummy data for employee salary status
+    const employeeSalaryData = {
+        labels: ["John", "Alice", "Bob", "Emily", "Tom"],
+        datasets: [
+            {
+                name: "Salary",
+                values: [50000, 60000, 55000, 70000, 48000]
+            }
+        ]
+    };
+
+    // Initialize Frappé Chart
+    const chart = new frappe.Chart("#salaryChart", {
+        title: "Employee Salary Status",
+        data: employeeSalaryData,
+        type: 'bar',
+        height: 300,
+        colors: ['#7cd6fd'],
+        axisOptions: {
+            xAxisMode: 'tick',
+            yAxisMode: 'span',
+            xIsSeries: true
+        }
+    });
+});
+
+    </script>
+
+    
+</body>
+</html>
